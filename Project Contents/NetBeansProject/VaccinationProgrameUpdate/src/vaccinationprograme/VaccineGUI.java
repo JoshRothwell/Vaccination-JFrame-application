@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package vaccinationprograme;
+import java.util.Iterator;
 
 /**
  *
@@ -28,6 +29,7 @@ public class VaccineGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         TitlePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         BodyPanel = new javax.swing.JPanel();
@@ -42,7 +44,8 @@ public class VaccineGUI extends javax.swing.JFrame {
         DisplayAllList = new javax.swing.JButton();
         DisplayNumberQueue = new javax.swing.JButton();
         ApproveVaccineSchedule = new javax.swing.JButton();
-        PatientConditionField = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,6 +117,15 @@ public class VaccineGUI extends javax.swing.JFrame {
             }
         });
 
+        jRadioButton1.setText("Yes");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton2.setText("No");
+
         javax.swing.GroupLayout BodyPanelLayout = new javax.swing.GroupLayout(BodyPanel);
         BodyPanel.setLayout(BodyPanelLayout);
         BodyPanelLayout.setHorizontalGroup(
@@ -121,18 +133,6 @@ public class VaccineGUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1))
-            .addGroup(BodyPanelLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PatientNameLabel)
-                    .addComponent(PatientAgeLabel)
-                    .addComponent(PatientConditionLabel))
-                .addGap(56, 56, 56)
-                .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PatientNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                    .addComponent(PatientAgeField)
-                    .addComponent(PatientConditionField))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(BodyPanelLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,25 +142,45 @@ public class VaccineGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(ApproveVaccineSchedule)
                 .addGap(38, 38, 38))
+            .addGroup(BodyPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PatientAgeField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BodyPanelLayout.createSequentialGroup()
+                        .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PatientNameLabel)
+                            .addComponent(PatientAgeLabel)
+                            .addComponent(PatientConditionLabel))
+                        .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(BodyPanelLayout.createSequentialGroup()
+                                .addGap(56, 56, 56)
+                                .addComponent(PatientNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(BodyPanelLayout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(jRadioButton1)
+                                .addGap(31, 31, 31)
+                                .addComponent(jRadioButton2)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BodyPanelLayout.setVerticalGroup(
             BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BodyPanelLayout.createSequentialGroup()
-                .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(BodyPanelLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(PatientNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyPanelLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addContainerGap(36, Short.MAX_VALUE)
                         .addComponent(PatientNameLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(30, 30, 30)
                 .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PatientAgeLabel)
                     .addComponent(PatientAgeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                .addGap(18, 18, 18)
                 .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PatientConditionLabel)
-                    .addComponent(PatientConditionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -172,7 +192,7 @@ public class VaccineGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DisplayNumberQueue))
                     .addComponent(ApproveVaccineSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -205,208 +225,73 @@ public class VaccineGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_DisplayNumberQueueActionPerformed
 
     private void AddVaccineListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddVaccineListActionPerformed
-        // TODO add your handling code here:
-        
-        if(PatientNameField.getText().isEmpty() & PatientAgeField.getText().isEmpty() && PatientNameField.getText().isEmpty()){
-            ListTextArea.append("\n"+"Values cannot be empty, please enter all information before attempting to save details."+"\n");
-        }
-                
-                
-        else
-                {
-           
-         String name, condition;
+        // Check if any of the fields are empty
+    if (PatientNameField.getText().isEmpty() || PatientAgeField.getText().isEmpty()) {
+        ListTextArea.append("\nValues cannot be empty, please enter all information before attempting to save details.\n");
+    } else {
+        String name, condition;
         int age = Integer.parseInt(PatientAgeField.getText());
-        int priority;
         Recipient r = new Recipient();
-        //This was used in MaterHospital to input the priority manually, since thie priority is decided by Age + Condition, this is useless.
-        Integer priorityINT;
-        //Integer ageINT;
-        
-         
-            if(age <= 17) {
-                priorityINT = 1;
-                priority = priorityINT.intValue();
-                vaccQueue.enqueue(priority,r);
-                name = PatientNameField.getText();
-                age = Integer.parseInt(PatientAgeField.getText());
-                condition = PatientConditionField.getText();
-                r.setName(name);
-                r.setCondition(condition);
-                r.setAge(age);
-                
+        int priorityINT;
+
+        name = PatientNameField.getText();
+        condition = jRadioButton1.isSelected() ? "Yes" : "No";
+        r.setName(name);
+        r.setCondition(condition);
+        r.setAge(age);
+
+        if (jRadioButton1.isSelected()) {
+            priorityINT = 6;
+        } else {
+            switch (age) {
+                case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17:
+                    priorityINT = 1;
+                    break;
+
+                case 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29:
+                    priorityINT = 2;
+                    break;
+
+                // Add cases for other age groups
+
+                case 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100:
+                    priorityINT = 10;
+                    break;
+
+                default:
+                    ListTextArea.append("\nInvalid age.\n");
+                    return;
             }
-            else if(age >= 18 && age <=29 &&PatientConditionField.getText().equalsIgnoreCase("No") ) {
-                priorityINT = 2;
-                priority = priorityINT.intValue();
-                vaccQueue.enqueue(priority,r);
-                name = PatientNameField.getText();
-                age = Integer.parseInt(PatientAgeField.getText());
-                condition = PatientConditionField.getText();
-                r.setName(name);
-                r.setCondition(condition);
-                r.setAge(age);
-                
-            }
-            
-            else if(age >= 30 && age <=44 &&PatientConditionField.getText().equalsIgnoreCase("No") ) {
-                priorityINT = 3;
-                priority = priorityINT.intValue();
-                vaccQueue.enqueue(priority,r);
-                name = PatientNameField.getText();
-                age = Integer.parseInt(PatientAgeField.getText());
-                condition = PatientConditionField.getText();
-                r.setName(name);
-                r.setCondition(condition);
-                r.setAge(age);
-                
-            }
-            
-            else if(age >= 45 && age <=54 &&PatientConditionField.getText().equalsIgnoreCase("No") ) {
-                priorityINT = 4;
-                priority = priorityINT.intValue();
-                vaccQueue.enqueue(priority,r);
-                name = PatientNameField.getText();
-                age = Integer.parseInt(PatientAgeField.getText());
-                condition = PatientConditionField.getText();
-                r.setName(name);
-                r.setCondition(condition);
-                r.setAge(age);
-                
-            }
-            
-            
-                
-            
-            
-            else if(age >= 55 && age <=64 &&PatientConditionField.getText().equalsIgnoreCase("No") ) {
-                priorityINT = 5;
-                priority = priorityINT.intValue();
-                vaccQueue.enqueue(priority,r);
-                name = PatientNameField.getText();
-                age = Integer.parseInt(PatientAgeField.getText());
-                condition = PatientConditionField.getText();
-                r.setName(name);
-                r.setCondition(condition);
-                r.setAge(age);
-                
-            }
-            
-            else if(age >= 18 && age <=64 &&PatientConditionField.getText().equalsIgnoreCase("Yes") ){
-                priorityINT = 6;
-                priority = priorityINT.intValue();
-                vaccQueue.enqueue(priority,r);
-                name = PatientNameField.getText();
-                age = Integer.parseInt(PatientAgeField.getText());
-                condition = PatientConditionField.getText();
-                r.setName(name);
-                r.setCondition(condition);
-                r.setAge(age);
-                
-            }
-            
-         
-            else if(age >= 65 && age <=69 &&PatientConditionField.getText().equalsIgnoreCase("No") ) {
-                priorityINT = 7;
-                priority = priorityINT.intValue();
-                vaccQueue.enqueue(priority,r);
-                name = PatientNameField.getText();
-                age = Integer.parseInt(PatientAgeField.getText());
-                condition = PatientConditionField.getText();
-                r.setName(name);
-                r.setCondition(condition);
-                r.setAge(age);
-                
-            }
-            
-            else if(age >= 70 && age <=79 &&PatientConditionField.getText().equalsIgnoreCase("No") ) {
-                priorityINT = 8;
-                priority = priorityINT.intValue();
-                vaccQueue.enqueue(priority,r);
-                name = PatientNameField.getText();
-                age = Integer.parseInt(PatientAgeField.getText());
-                condition = PatientConditionField.getText();
-                r.setName(name);
-                r.setCondition(condition);
-                r.setAge(age);
-                
-            }
-            else if(age >= 80 && age <=89 &&PatientConditionField.getText().equalsIgnoreCase("No") ) {
-                priorityINT = 9;
-                priority = priorityINT.intValue();
-                vaccQueue.enqueue(priority,r);
-                name = PatientNameField.getText();
-                age = Integer.parseInt(PatientAgeField.getText());
-                condition = PatientConditionField.getText();
-                r.setName(name);
-                r.setCondition(condition);
-                r.setAge(age);
-                
-            }
-            
-            else if(age >= 90 && age <=100 &&PatientConditionField.getText().equalsIgnoreCase("No") ) {
-                priorityINT = 10;
-                priority = priorityINT.intValue();
-                vaccQueue.enqueue(priority,r);
-                name = PatientNameField.getText();
-                age = Integer.parseInt(PatientAgeField.getText());
-                condition = PatientConditionField.getText();
-                r.setName(name);
-                r.setCondition(condition);
-                r.setAge(age);
-                
-            }
-            
-             
+        }
 
+        int priority = priorityINT;
+        vaccQueue.enqueue(priority, r);
 
-
-
-
-
-
-
-
-        
-        
-        
-        //name = PatientNameField.getText();
-        //condition = PatientConditionField.getText();
-        
-        //age = new Integer (PatientAgeField.getText());
-        //r.setName(name);
-        //r.setCondition(condition);
-        //r.setAge(age);
-        //This doesn't actually seem to do anything, might be better to just try and work with the 
-        //priority = r.getPriority();
-        
-     
-        
-        //How do I get this to display onto the text area for priority, and how do I sort it into groups.
-        // Study material doesn't seem to work with this, and online resources are not working. I am legitmately stuck and out of ideas.
-        //priorityINT = new Integer (PatientAgeField.getText());
-        //WHERE DOES THIS GO.
-        //I have no idea how to assign this getText.
-        //priority = priorityINT.intValue();
-        //accQueue.enqueue(priority,);
-
-        
-        //r.setAge(age);
-        
-
-        ListTextArea.append(PatientNameField.getText() + " Recipient details have been added to vaccine queue"+ "\n");
+        ListTextArea.append(name + " Recipient details have been added to the vaccine queue\n");
         PatientNameField.setText("");
         PatientAgeField.setText("");
-        PatientConditionField.setText("");
-                }
-        
-        
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+    }
     }//GEN-LAST:event_AddVaccineListActionPerformed
 
     private void DisplayAllListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayAllListActionPerformed
         // TODO add your handling code here:
-        ListTextArea.append("The recipients waiting in the queue...."+ "\n");
-        ListTextArea.append(vaccQueue.printvaccueue()+ "\n");
+    ListTextArea.append("The recipients waiting in the queue....\n");
+
+    // Use a counter to represent the position in the queue
+    int position = 1;
+
+    Iterator<VaccineElement> iterator = vaccQueue.iterator();
+    while (iterator.hasNext()) {
+        VaccineElement ve = iterator.next();
+        Recipient r = (Recipient) ve.getElement();
+        ListTextArea.append("Position = " + position + " Name = " + r.getName() +
+                " Age = " + r.getAge() + " Condition = " + r.getCondition() +
+                " Priority = " + ve.getKey() + "\n");
+        position++;
+    }
+    ListTextArea.append("\n");
     }//GEN-LAST:event_DisplayAllListActionPerformed
 
     private void ApproveVaccineScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApproveVaccineScheduleActionPerformed
@@ -421,6 +306,10 @@ public class VaccineGUI extends javax.swing.JFrame {
             ListTextArea.append("There are no more patients waiting"+ "\n");
       
     }//GEN-LAST:event_ApproveVaccineScheduleActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -469,12 +358,14 @@ public class VaccineGUI extends javax.swing.JFrame {
     private javax.swing.JTextArea ListTextArea;
     private javax.swing.JTextField PatientAgeField;
     private javax.swing.JLabel PatientAgeLabel;
-    private javax.swing.JTextField PatientConditionField;
     private javax.swing.JLabel PatientConditionLabel;
     private javax.swing.JTextField PatientNameField;
     private javax.swing.JLabel PatientNameLabel;
     private javax.swing.JPanel TitlePanel;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

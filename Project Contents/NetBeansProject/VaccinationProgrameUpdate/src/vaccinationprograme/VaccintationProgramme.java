@@ -9,10 +9,11 @@ package vaccinationprograme;
  *
  * @author josh
  */
-public interface VaccineInterface {
-    public void enqueue(int key, Object element);
-    public int size();
-    public boolean isEmpty();
-    public Object dequeue();
-    public String printvaccueue();
+public class VaccintationProgramme {
+    public static void main(String[] args) {
+        // TODO code application logic here4
+        VaccineGUI vaccapp = new VaccineGUI();
+        vaccapp.setVisible(true);
+       
+    }
 }

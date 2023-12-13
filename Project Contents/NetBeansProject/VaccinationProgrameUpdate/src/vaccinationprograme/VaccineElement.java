@@ -40,3 +40,4 @@ public class VaccineElement {
           return msg;
       }
 }
+

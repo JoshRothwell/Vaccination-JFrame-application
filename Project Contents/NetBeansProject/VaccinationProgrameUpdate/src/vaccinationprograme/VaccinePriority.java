@@ -6,6 +6,8 @@
 package vaccinationprograme;
 
 import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -83,30 +85,9 @@ public class VaccinePriority implements VaccineInterface {
         return printStr;
     }
     
-    //NOTE: This route didn't work, it was a failed attempt at the age priority.
-    
-    //public int comparePriority(Recipient r) {
-        //if(age < r.age)
-            //return priority -1;
-        //else if (age > r.age)
-            //return priority 1;
-        //return 0;
-    //}
-    
-    
-    //NOTE: This was my second attempt at sorting the priority based off age, i'm unsure if it's because of how I tried to
-    // sort the priority, but no matter what age I input for a recipient, the priority is always zero i.e not actually sorting.
-    // For next attempt I should try creating a secondary element based off online examples, the first set of elements used to
-    //represenet the newly added input, and the second comparing it to any Recipients that fit the criteria.
-    
-    
-    //public int comparePriority(Recipient r) {
-      //  if(r.getAge() <= 100 && r.getAge() <= 100)
-        //    return Integer.compare(r.getPriority(),r.getPriority());
-        //if(r.getAge() > 100 && r.getAge() > 100)
-          //  return Integer.compare(r.getPriority(),r.getPriority());
-        //if(r.getAge() <= 100 && r.getAge() > 100)
-          //  return -1;
-        //return 1;
-    //}
+    @Override
+    public Iterator<VaccineElement> iterator() {
+        // Return an iterator for your vaccQueue collection
+        return vaccQueue.iterator();
+    }
 }
