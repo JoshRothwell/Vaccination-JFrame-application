@@ -251,8 +251,34 @@ public class VaccineGUI extends javax.swing.JFrame {
                 case 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29:
                     priorityINT = 2;
                     break;
+                    
+                   case 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44:
+                    priorityINT = 3;
+                    break; 
+                    
+                    case 45, 46, 47, 48, 49, 50, 51, 52, 53, 54:
+                    priorityINT = 4;
+                    break;
+                    
+                    case 55, 56, 57, 58, 59, 60, 61, 62, 63, 64:
+                    priorityINT = 5;
+                    break;
+                    
+                    case 65, 66, 67, 68, 69:
+                    priorityINT = 6;
+                    break;
+                    
+                    case 70, 71, 72, 73, 74:
+                    priorityINT = 7;
+                    break;
 
-                // Add cases for other age groups
+                    case 75, 76, 77, 78, 79:
+                    priorityINT = 8;
+                    break;
+                    
+                   case 80, 81, 82, 83, 84, 85, 86, 87, 88, 89:
+                   priorityINT = 9;
+                   break;
 
                 case 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100:
                     priorityINT = 10;
@@ -276,22 +302,22 @@ public class VaccineGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_AddVaccineListActionPerformed
 
     private void DisplayAllListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayAllListActionPerformed
-        // TODO add your handling code here:
-    ListTextArea.append("The recipients waiting in the queue....\n");
+       ListTextArea.append("Recipients waiting in the queue: ");
 
-    // Use a counter to represent the position in the queue
     int position = 1;
 
     Iterator<VaccineElement> iterator = vaccQueue.iterator();
     while (iterator.hasNext()) {
         VaccineElement ve = iterator.next();
         Recipient r = (Recipient) ve.getElement();
-        ListTextArea.append("Position = " + position + " Name = " + r.getName() +
-                " Age = " + r.getAge() + " Condition = " + r.getCondition() +
-                " Priority = " + ve.getKey() + "\n");
+
+        ListTextArea.append(String.format(
+            "Position: %d, Name: %s, Age: %d, Condition: %s, Priority: %d\n",
+            position, r.getName(), r.getAge(), r.getCondition(), ve.getKey()
+        ));
+
         position++;
     }
-    ListTextArea.append("\n");
     }//GEN-LAST:event_DisplayAllListActionPerformed
 
     private void ApproveVaccineScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApproveVaccineScheduleActionPerformed
